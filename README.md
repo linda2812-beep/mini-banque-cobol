@@ -1,41 +1,85 @@
-Mini-banque-cobol
+# 💰 Mini Système Bancaire COBOL
 
-Ce projet est une mini-application bancaire écrite en COBOL. Il s'agit d'un exercice ou d'une démonstration des fonctionnalités de base d'un système bancaire, entièrement codé dans ce langage historique des systèmes financiers.
+Un petit projet de **gestion de comptes bancaires** développé en **COBOL** avec **GnuCOBOL**.  
+Ce programme simule un mini système bancaire permettant d’ajouter, afficher, rechercher, modifier et supprimer des comptes.
 
-Fonctionnalités principales
+---
 
-Création de comptes bancaires
-Consultation du solde d’un compte
-Dépôt et retrait d’argent
-Gestion des transactions de base
-Prérequis
+## 🧠 Objectif du projet
+Ce projet a pour but de :
+- pratiquer la programmation structurée en **COBOL** ;
+- manipuler la **lecture et l’écriture de fichiers séquentiels** ;
+- comprendre la **gestion des données** d’un petit système bancaire ;
+- montrer une base concrète de maîtrise du langage COBOL dans un contexte professionnel (secteur bancaire).
 
-Un compilateur COBOL (par exemple : GnuCOBOL)
-Un environnement compatible pour exécuter les programmes COBOL (Linux, Windows, etc.)
-Installation et utilisation
+---
 
-Clonez ce dépôt :
+## ⚙️ Fonctionnalités
+✅ **Ajouter un compte** — saisie du nom, type de compte et solde initial  
+✅ **Afficher tous les comptes** — lecture complète du fichier `comptes.txt`  
+✅ **Rechercher un compte** — par nom du client  
+✅ **Effectuer un dépôt ou un retrait** — mise à jour du solde  
+✅ **Supprimer un compte** — gestion d’un fichier temporaire `temp.txt`  
+✅ **Stockage persistant** — toutes les données sont enregistrées dans `comptes.txt`
 
-bash
-git clone https://github.com/linda2812-beep/mini-banque-cobol.git
-Allez dans le dossier du projet :
+---
 
-bash
-cd mini-banque-cobol
-Compilez les fichiers COBOL :
+## 🧩 Structure du projet
+📁 mini-banque-cobol/
+│
+├── banque.cob # Code source COBOL principal
+├── comptes.txt # Fichier contenant les comptes bancaires
+├── temp.txt # Fichier temporaire utilisé pour la suppression
+├── comptes_backup.txt # Sauvegarde du fichier de comptes
+└── README.md # Documentation du projet
 
-bash
-cobc -x -o mini-banque main.cob
-(Remplacez main.cob par le nom de votre fichier principal si besoin.)
+---
 
-Lancez le programme :
+## 🚀 Lancer le projet
 
-bash
-./mini-banque
-Structure du projet
+### 1️⃣ Installer GnuCOBOL
+#### macOS
+```bash
+brew install gnucobol
+Linux (Ubuntu / Debian)
+sudo apt install open-cobol
+Windows
+Installer via Winget :
+winget install gnucobol
+2️⃣ Compiler le programme
+Dans le terminal, place-toi dans le dossier du projet :
+cobc -x banque.cob
+Cela génère un exécutable nommé banque.
+3️⃣ Exécuter le programme
+./banque
+Le menu suivant apparaîtra :
+================================
+   MINI SYSTEME BANCAIRE COBOL
+================================
+1 - Ajouter un compte
+2 - Afficher tous les comptes
+3 - Rechercher un compte
+4 - Dépôt / Retrait
+5 - Supprimer un compte
+6 - Quitter
+Votre choix :
+🧾 Exemple de données (comptes.txt)
+00001Inès Kezadri       Epargne   00030000020251014
+00002David Florella     Courant   00080000020251014
+🧱 Concepts COBOL utilisés
+Divisions (IDENTIFICATION, ENVIRONMENT, DATA, PROCEDURE)
+Gestion de fichiers séquentiels (READ, WRITE, REWRITE)
+Boucles et conditions (PERFORM UNTIL, EVALUATE, IF)
+Appels système pour remplacer les fichiers (CALL "SYSTEM")
+Variables déclarées dans la WORKING-STORAGE SECTION
+👩🏽‍💻 Auteur
+Linda Florella
+Développeuse COBOL junior — passionnée par les systèmes bancaires et la logique métier.
+📫 LinkedIn (ajoute ton lien ici)
+🐙 GitHub
 
-Les sources COBOL se trouvent à la racine du projet.
-Des exemples de données ou des scripts peuvent être inclus pour tester les fonctionnalités.
-Auteurs
+🧡 Remerciements
+Merci à GnuCOBOL et à la communauté open source qui permet de continuer à faire vivre ce langage mythique utilisé dans le monde bancaire.
+🏦 Ce projet est un exercice d’apprentissage mais reflète une logique réelle de gestion de comptes en COBOL.
 
-linda2812-beep
+---
